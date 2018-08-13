@@ -1,0 +1,14 @@
+{
+  "name": "karl_mayer_adamos_e2e",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "smoke": "newman run ./Launchpad.postman_collection.json -e ./QA.postman_environment.json"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "newman": "^3.10.0"
+  }
+}

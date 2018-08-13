@@ -1,0 +1,7 @@
+[
+  {
+    "code": "unsupportedMediaType",
+    "http_code": "415",
+    "message": "Requested media type is not supported"
+  }
+]

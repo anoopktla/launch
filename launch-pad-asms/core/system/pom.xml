@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.km.adamos.launchpad.core</groupId>
+  <artifactId>system</artifactId>
+  <name>System</name>
+  <version>0.1-SNAPSHOT</version>
+
+  <parent>
+    <groupId>com.km.adamos.launchpad</groupId>
+    <artifactId>core</artifactId>
+    <version>0.1-SNAPHOT</version>
+  </parent>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-aop</artifactId>
+      <version>${spring-boot-dependencies.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.km.adamos.launchpad.core</groupId>
+      <artifactId>common</artifactId>
+      <version>0.1-SNAPHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>3.0</version>
+    </dependency>
+
+  </dependencies>
+</project>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <artifactId>core</artifactId>
+    <groupId>com.km.adamos.launchpad</groupId>
+    <version>0.1-SNAPHOT</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.km.adamos.launchpad.core</groupId>
+  <artifactId>device</artifactId>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.km.adamos.launchpad.core</groupId>
+      <artifactId>common</artifactId>
+      <version>0.1-SNAPHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>c8y.java-agent</groupId>
+      <artifactId>jv-agent</artifactId>
+      <version>8.19.1</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-log4j12</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>log4j</groupId>
+          <artifactId>log4j</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+  </dependencies>
+
+
+</project>

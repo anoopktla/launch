@@ -1,0 +1,50 @@
+{
+	"info": {
+		"_postman_id": "f742227a-0cc1-46f2-a531-a688308aa5e0",
+		"name": "Launchpad",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get devices",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "87fc6bec-3b22-4a3a-9507-a8e9f4037922",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status is success\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var jsonData = pm.response.json();",
+							"",
+							"pm.test(\"Devices are returned\", function () {",
+							"    pm.expect(jsonData).to.not.eql(undefined);",
+							"    pm.expect(jsonData.length).to.eql(2);",
+							"    ",
+							"    pm.expect(jsonData[0].name).to.not.eql(undefined)",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "{{host}}/devices",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"devices"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

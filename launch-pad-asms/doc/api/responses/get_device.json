@@ -1,0 +1,107 @@
+{
+  "data": {
+    "type": "devices",
+    "id": "1",
+    "attributes": {
+      "metaData": {
+         "code": "01",
+        "number": "120125",
+        "name": "WEFTTRONIC 2"
+      },
+      "performanceData": {
+        "maxSpeed": {
+          "data": 3200,
+          "unit": "rpm"
+        },
+        "maxOutput": {
+          "data": 40,
+          "unit": "mh"
+        }
+      },
+      "settings": {
+        "targetSpeed": {
+          "data": 2800,
+          "unit": "rpm"
+        },
+        "targetOutput": {
+          "data": 30,
+          "unit": "mh"
+        },
+        "minAvailability": {
+          "data": 80,
+          "unit": "percent"
+        }
+      }
+    },
+    "relationships": {
+      "currentMeasurement": {
+        "links": {
+          "related": "https://karlmayer.adamos-dev.com/devices/1/measurements"
+        },
+        "data": [
+          { "type": "measurements", "id": "1"},
+          { "type": "measurements", "id": "2"}
+        ]
+      }
+    },
+    "links": {
+      "self": "https://karlmayer.adamos-dev.com/devices/1"
+    }
+  },
+  "included": [
+    {
+      "type": "measurements",
+      "id": "1",
+      "attributes": {
+        "deviceId": "1",
+        "productionSpeed": {
+          "data": 2800,
+          "unit": "rpm"
+        },
+        "output": {
+          "data": 10,
+          "unit": "mh"
+        },
+        "availability": {
+          "data": 80,
+          "unit": "percent"
+        },
+        "performance": {
+          "data": 25,
+          "unit": "percent"
+        },
+        "timestamp": "2018-07-25T15:06:46.506+02:00"
+      },
+      "links": {
+        "self": "https://karlmayer.adamos-dev.com/devices/1/measurements/1"
+      }
+    },
+    {
+      "type": "measurements",
+      "id": "2",
+      "attributes": {
+        "deviceId": "1",
+        "productionSpeed": {
+          "data": 3200,
+          "unit": "rpm"
+        },
+        "output": {
+          "data": 15,
+          "unit": "mh"
+        },
+        "availability": {
+          "data": 90,
+          "unit": "percent"
+        },
+        "performance": {
+          "data": 16,
+          "unit": "percent"
+        },
+        "timestamp": "2018-07-25T15:06:46.506+02:00"
+      },
+      "links": {
+        "self": "https://karlmayer.adamos-dev.com/devices/1/measurements/2"
+      }
+    }
+  ]
+}

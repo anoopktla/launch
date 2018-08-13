@@ -1,0 +1,7 @@
+[
+  {
+    "code": "notFound",
+    "http_code": "404",
+    "message": "Device with the given id does not exist"
+  }
+]

@@ -1,0 +1,65 @@
+{
+  "data": [
+    {
+      "type": "measurements",
+      "id": "1",
+      "attributes": {
+        "deviceId": "1",
+        "productionSpeed": {
+          "data": 2800,
+          "unit": "rpm"
+        },
+        "output": {
+          "data": 10,
+          "unit": "mh"
+        },
+        "availability": {
+          "data": 80,
+          "unit": "percent"
+        },
+        "performance": {
+          "data": 25,
+          "unit": "percent"
+        },
+        "timestamp": "2018-07-25T15:06:46.506+02:00"
+      },
+      "links": {
+        "self": "https://karlmayer.adamos-dev.com/measurements/1"
+      }
+    },
+    {
+      "type": "measurements",
+      "id": "2",
+      "attributes": {
+        "deviceId": "1",
+        "productionSpeed": {
+          "data": 3200,
+          "unit": "rpm"
+        },
+        "output": {
+          "data": 15,
+          "unit": "mh"
+        },
+        "availability": {
+          "data": 90,
+          "unit": "percent"
+        },
+        "performance": {
+          "data": 16,
+          "unit": "percent"
+        },
+        "timestamp": "2018-07-25T15:06:46.506+02:00"
+      },
+      "links": {
+        "self": "https://karlmayer.adamos-dev.com/measurements/2"
+      }
+    }
+  ],
+  "paging": {
+    "cursors": {
+      "after": "https://karlmayer.adamos-dev.com/measurements?cursor=NA==",
+      "before": "https://karlmayer.adamos-dev.com/measurements?cursor=MQ==",
+      "current": "https://karlmayer.adamos-dev.com/measurements?cursor=MT=="
+    }
+  }
+}
