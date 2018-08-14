@@ -17,7 +17,7 @@ public class StubDeviceAdapter implements DeviceAdapter {
   public List<Device> loadDevices() {
     List<Device> devices = new ArrayList<>();
     Measurement measurement = new Measurement("40",Unit.valueOf("RPM"));
-    Device device = new Device(01L,"device 1", "device type", "device owner",null,null);
+    Device device = new Device(01L,"device 1", "device type", "device owner","serial number",null,null);
 
     devices.add(device);
     return  devices;

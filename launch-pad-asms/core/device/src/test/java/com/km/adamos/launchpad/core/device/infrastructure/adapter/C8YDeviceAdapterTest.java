@@ -70,7 +70,7 @@ public class C8YDeviceAdapterTest {
     when(managedObjectRepresentation.getName()).thenReturn("deviceName");
     when(managedObjectRepresentation.getId()).thenReturn(gId);
     when(gId.getLong()).thenReturn(01L);
-    when(managedObjectRepresentation.getOwner()).thenReturn("deviceOwner");
+    when(managedObjectRepresentation.getDeviceCode()).thenReturn("deviceOwner");
     when(managedObjectRepresentation.getAttrs()).thenReturn(attributes);
     List<Device> devicesFromPlatform = c8YDeviceAdapter.loadDevices();
     assertThat(devicesFromPlatform, notNullValue());

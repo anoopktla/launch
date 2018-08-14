@@ -7,8 +7,8 @@ public enum SupportedMeasurements {
   MAX_OUTPUT("Max Output","maximum output","km_outputMax");
 
   private String measurmentName;
-  private String measurementMapping;
   private String description;
+  private String measurementMapping;
 
   SupportedMeasurements(String measurmentName, String description,String measurementMapping) {
     this.measurmentName = measurmentName;
