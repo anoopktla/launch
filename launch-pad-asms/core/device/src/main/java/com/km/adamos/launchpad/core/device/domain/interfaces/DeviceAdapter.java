@@ -8,4 +8,6 @@ public interface DeviceAdapter {
 
   List<Device> loadDevices();
 
+  List<Device> loadDevicesPaginated(int page,int pageSize);
+
 }

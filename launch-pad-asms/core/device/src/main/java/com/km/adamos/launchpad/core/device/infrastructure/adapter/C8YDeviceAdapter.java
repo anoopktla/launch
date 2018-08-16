@@ -8,6 +8,8 @@ import com.cumulocity.sdk.client.inventory.InventoryFilter;
 import com.cumulocity.sdk.client.inventory.ManagedObjectCollection;
 import com.km.adamos.launchpad.core.device.domain.interfaces.DeviceAdapter;
 import com.km.adamos.launchpad.core.device.domain.model.Device;
+import com.km.adamos.launchpad.core.device.domain.model.DevicePerformanceData;
+import com.km.adamos.launchpad.core.device.domain.model.DeviceSettings;
 import com.km.adamos.launchpad.core.device.domain.model.Measurement;
 import com.km.adamos.launchpad.core.device.domain.model.enums.SupportedDevices;
 import com.km.adamos.launchpad.core.device.domain.model.enums.SupportedMeasurements;
@@ -46,6 +48,11 @@ public class C8YDeviceAdapter implements DeviceAdapter {
     return  neededDevices;
   }
 
+  @Override
+  public List<Device> loadDevicesPaginated(int page,int pageSize){
+    return  null;
+  }
+
   private List<Device> getDeviceFromPlatformResponse(ManagedObjectCollection managedObjects){
    Iterable<ManagedObjectRepresentation> iterable = () -> managedObjects.get().allPages().iterator();
    Stream targetStream  = StreamSupport.stream(iterable.spliterator(),false);
@@ -55,21 +62,15 @@ public class C8YDeviceAdapter implements DeviceAdapter {
    List<Device> devices = neededDevices.stream().map(managedObjectRepresentation -> {
      Measurement maxSpeed = getMeasurement(managedObjectRepresentation.getAttrs(), SupportedMeasurements.MAX_SPEED,Unit.RPM);
      Measurement maxOutput = getMeasurement( managedObjectRepresentation.getAttrs(),SupportedMeasurements.TARGET_SPEED,Unit.RPM);
-     Map<String,Measurement> performanceDataMap = new HashMap<>();
-     performanceDataMap.put("maxSpeed", maxSpeed);
-     performanceDataMap.put("maxOutput", maxOutput);
-
-     Map<String,Measurement> settingsMap = new HashMap<>();
+     DevicePerformanceData devicePerformanceData = new DevicePerformanceData(maxSpeed,maxOutput);
      Measurement targetSpeed = getMeasurement( managedObjectRepresentation.getAttrs(),SupportedMeasurements.TARGET_SPEED,Unit.RPM);
-     settingsMap.put("targetSpeed", targetSpeed);
      Measurement targetOutput = getMeasurement( managedObjectRepresentation.getAttrs(),SupportedMeasurements.TARGET_OUTPUT,Unit.RPM);
-     settingsMap.put("targetOutput", targetOutput);
      Measurement minAvailability = getMeasurement( managedObjectRepresentation.getAttrs(),SupportedMeasurements.TARGET_OUTPUT,Unit.PERCENTAGE);
-     settingsMap.put("minAvailability",minAvailability);
+     DeviceSettings deviceSettings = new DeviceSettings(targetSpeed,targetOutput,minAvailability);
      Device device = new Device(managedObjectRepresentation.getId().getLong(),
        managedObjectRepresentation.getName(),managedObjectRepresentation.getType(),
        getPropertyName(managedObjectRepresentation.getAttrs(),"km_machineCode"),
-       getPropertyName(managedObjectRepresentation.getAttrs(),"km_machineSerial"),performanceDataMap, settingsMap);
+       getPropertyName(managedObjectRepresentation.getAttrs(),"km_machineSerial"),devicePerformanceData,deviceSettings);
      return device;
    }).collect(Collectors.toList());
    return  devices;

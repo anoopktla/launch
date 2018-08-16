@@ -20,6 +20,22 @@
       <version>${spring-boot-dependencies.version}</version>
     </dependency>
     <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-rest</artifactId>
+      <version>2.0.4.RELEASE</version>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-core</artifactId>
+      <version>2.9.6</version>
+    </dependency>
+    <dependency>
+      <groupId>com.jayway.jsonpath</groupId>
+      <artifactId>json-path</artifactId>
+      <version>2.2.0</version>
+
+    </dependency>
+    <dependency>
       <groupId>com.km.adamos.launchpad.core</groupId>
       <artifactId>system</artifactId>
       <version>0.1-SNAPSHOT</version>
